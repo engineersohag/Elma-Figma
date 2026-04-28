@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emela - Affiliate Program</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{
+            background:#f3f3f3;
+            font-family:'Gantari', sans-serif;
+            /* padding-top: 95px; */
+        }
+        :root {
+            --primary-teal: #127a87;
+        }
+
+        /* Top Bar Styling */
+        .top-bar {
+            background-color: var(--primary-teal);
+            color: white;
+            font-size: 13px;
+            padding: 8px 0;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-bar-divider {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            height: 25px;
+            margin: 0 15px;
+        }
+
+        /* Main Header Styling */
+        .main-header {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-placeholder img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-link-custom {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 15px;
+        }
+
+        .search-container {
+            position: relative;
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 15px;
+        }
+
+        .search-input {
+            border-radius: 25px;
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            width: 100%;
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-teal);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-action-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .sub-text {
+            font-size: 11px;
+            color: #777;
+            display: block;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .search-container {
+                order: 3;
+                max-width: 100%;
+                margin: 15px 0 0 0;
+                width: 100%;
+            }
+            .main-header .container-fluid {
+                flex-wrap: wrap;
+            }
+            .user-action-item strong, .user-action-item .sub-text {
+                display: none; /* মোবাইলে শুধু আইকন দেখাবে */
+            }
+            .gap-4 {
+                gap: 1.5rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-placeholder img {
+                height: 30px;
+            }
+        }
+        .safety-section{
+            padding:0 0 32px;
+        }
+
+        .custom-wrap{
+            background:#f5f5f3;
+            border-radius:0 0 0 0;
+            overflow:hidden;
+            max-width:760px;
+        }
+
+        /* top area */
+        .safety-top{
+            position:relative;
+            background:linear-gradient(180deg,#dce9e0 0%, #edf1ed 100%);
+            border-bottom-left-radius:70px;
+            border-bottom-right-radius:70px;
+            padding:22px 28px 26px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .safety-top::before{
+            content:"";
+            position:absolute;
+            left:14px;
+            top:6px;
+            width:60px;
+            height:60px;
+            background-image: radial-gradient(#c8d6cd 1px, transparent 1px);
+            background-size:6px 6px;
+            opacity:.7;
+        }
+
+        .safety-top::after{
+            content:"";
+            position:absolute;
+            right:14px;
+            top:6px;
+            width:60px;
+            height:60px;
+            background-image: radial-gradient(#c8d6cd 1px, transparent 1px);
+            background-size:6px 6px;
+            opacity:.7;
+        }
+
+        .left-shield img{
+            width:58px;
+            height:auto;
+        }
+
+        .right-shield img{
+            width:48px;
+            height:auto;
+            opacity:.55;
+        }
+
+        .top-content{
+            flex:1;
+            padding:0 18px;
+        }
+
+        .top-content h2{
+            margin:0;
+            font-size:22px;
+            line-height:1.15;
+            font-weight:700;
+            color:#174c3b;
+        }
+
+        .top-content p{
+            margin:6px 0 0;
+            font-size:13px;
+            color:#4d5a53;
+        }
+
+        /* cards */
+        .safe-card{
+            background:#fbfbfb;
+            border:1px solid #d9d9d9;
+            border-radius:12px;
+            padding:14px 14px 12px;
+            height:100%;
+            box-shadow:0 1px 0 rgba(0,0,0,.03);
+        }
+
+        .card-head{
+            display:flex;
+            align-items:center;
+            gap:8px;
+            margin-bottom:10px;
+            position:relative;
+        }
+
+        .card-head h6{
+            margin:0;
+            font-size:15px;
+            font-weight:700;
+            color:#222;
+            white-space:nowrap;
+        }
+
+        .icon-circle{
+            width:34px;
+            height:34px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-shrink:0;
+        }
+
+        .icon-circle img{
+            width:18px;
+            height:18px;
+            object-fit:contain;
+        }
+
+        .num{
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            font-size:11px;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            flex-shrink:0;
+        }
+
+        /* top line */
+        .blue-line .card-head::after,
+        .red-line .card-head::after,
+        .green-line .card-head::after,
+        .purple-line .card-head::after,
+        .orange-line .card-head::after,
+        .teal-line .card-head::after{
+            content:"";
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:-6px;
+            height:2px;
+            border-radius:2px;
+        }
+
+        .blue-line .card-head::after{ background:#3f7fe8; }
+        .red-line .card-head::after{ background:#ea5a59; }
+        .green-line .card-head::after{ background:#36b35e; }
+        .purple-line .card-head::after{ background:#9b66ef; }
+        .orange-line .card-head::after{ background:#f4a03e; }
+        .teal-line .card-head::after{ background:#32b4b7; }
+
+        /* color tokens */
+        .light-blue{ background:#d9ecff; }
+        .light-red{ background:#ffe0df; }
+        .light-green{ background:#dff2dd; }
+        .light-purple{ background:#eadcff; }
+        .light-orange{ background:#ffe8c9; }
+        .light-teal{ background:#d8f2f1; }
+
+        .blue{ background:#2e7cf6; }
+        .red{ background:#e14b48; }
+        .green{ background:#25a84d; }
+        .purple{ background:#8c57e8; }
+        .orange{ background:#ee8d1d; }
+        .teal{ background:#18a6ab; }
+
+        .safe-card ul{
+            margin:12px 0 0;
+            padding-left:18px;
+        }
+
+        .safe-card li{
+            font-size:12px;
+            line-height:1.45;
+            color:#333;
+            margin-bottom:8px;
+        }
+
+        .report-text{
+            font-size:12px;
+            line-height:1.45;
+            color:#333;
+            margin:12px 0 10px;
+        }
+
+        .contact-box{
+            background:#eaf4f0;
+            border-radius:8px;
+            padding:8px 10px;
+            font-size:12px;
+            line-height:1.5;
+            color:#3d4b46;
+        }
+
+        /* bottom */
+        .bottom-safe-box{
+            margin:18px 0 0;
+            background:#edf3f0;
+            border:1px solid #99d2c8;
+            border-radius:12px;
+            padding:14px 18px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:16px;
+        }
+
+        .bottom-safe-box img{
+            width:46px;
+            height:auto;
+        }
+
+        .bottom-text{
+            text-align:center;
+        }
+
+        .bottom-text h5{
+            margin:0;
+            font-size:18px;
+            font-weight:700;
+            color:#184b3b;
+        }
+
+        .bottom-text p{
+            margin:6px 0 0;
+            font-size:12px;
+            color:#222;
+        }
+
+        /* spacing */
+        .row.g-3{
+            --bs-gutter-x:12px;
+            --bs-gutter-y:12px;
+            padding:14px 6px 0;
+        }
+
+        @media (max-width: 767.98px){
+            .top-content h2{
+                font-size:18px;
+            }
+
+            .bottom-safe-box{
+                flex-direction:column;
+                text-align:center;
+            }
+        }
+        /* 🔥 MAIN CONTAINER FIX (side gap remove) */
+        .custom-wrap{
+            max-width: 1000px;   /* আগে ছোট ছিল */
+            margin: 0 auto;
+        }
+
+        /* mobile full width */
+        @media(max-width:768px){
+            .custom-wrap{
+                max-width: 100%;
+                padding:0 10px;
+            }
+        }
+
+
+        /* 🔥 CARD FIX (line overflow fix) */
+        .safe-card{
+            background:#fbfbfb;
+            border:1px solid #d9d9d9;
+            border-radius:12px;
+            padding:16px;
+            height:100%;
+
+            position: relative;
+            overflow: hidden;   /* 🔥 line বাইরে যাওয়া বন্ধ */
+        }
+
+
+        /* 🔥 HEADER LINE FIX */
+        .card-head{
+            position:relative;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            margin-bottom:12px;
+        }
+
+        /* line */
+        .card-head::after{
+            content:"";
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:-6px;
+            height:2px;
+            border-radius:2px;
+        }
+
+
+        /* 🔥 ICON SIZE FIX */
+        .icon-circle{
+            width:42px;   /* আগে ছোট ছিল */
+            height:42px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .icon-circle img{
+            width:22px;   /* icon বড় */
+            height:22px;
+        }
+
+
+        /* 🔥 NUMBER FIX */
+        .num{
+            width:24px;
+            height:24px;
+            font-size:12px;
+        }
+
+
+        /* 🔥 CARD TITLE FIX */
+        .card-head h6{
+            font-size:16px;
+            font-weight:600;
+        }
+
+
+        /* 🔥 GRID GAP FIX */
+        .row.g-3{
+            --bs-gutter-x: 16px;   /* আগে বেশি gap */
+            --bs-gutter-y: 16px;
+        }
+
+
+        /* 🔥 SECTION CENTER FIX */
+        .safety-section{
+            display:flex;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+<div class="top-bar d-none d-lg-block">
+        <div class="container-fluid px-4 d-flex align-items-center justify-content-around">
+            <div>
+                <i class="fa-solid fa-box-open me-2"></i>
+                <strong>Free Shipping</strong><br>
+                <small style="font-size: 10px;">Special for you</small>
+            </div>
+            <div class="top-bar-divider"></div>
+            <div class="me-4">
+                <i class="fa-solid fa-headset me-1"></i> 24/7 Customer Support <br>
+                <i class="fa-solid fa-rotate-left me-1"></i> Free return policy
+            </div>
+            <div class="top-bar-divider"></div>
+            <div class="me-3">
+                <i class="fa-solid fa-mobile-screen-button me-1"></i> Get the Emela App
+            </div>
+            <div class="top-bar-divider"></div>
+            <div class="d-flex align-items-center bg-dark bg-opacity-25 rounded">
+                <a href="#"><img src="public/topbar-image.jpg" alt="Promo" style="width: 200px;"></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container-fluid px-3 px-md-4 d-flex align-items-center justify-content-between">
+
+            <div class="logo-placeholder">
+                <img src="public/logo.png" class="me-5" alt="Logo">
+            </div>
+
+            <nav class="d-none d-xl-flex align-items-center">
+                <a href="#" class="nav-link-custom"><i class="fa-regular fa-thumbs-up me-1"></i> Best-Selling Items</a>
+                <a href="#" class="nav-link-custom">New In</a>
+                <div class="dropdown">
+                    <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Fashion</a></li>
+                        <li><a class="dropdown-item" href="#">Electronics</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search on Emela...">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 gap-md-4">
+                <div class="user-action-item">
+                    <i class="fa-regular fa-user fs-5"></i>
+                    <div>
+                        <strong>Sign in / Register</strong>
+                        <span class="sub-text">Orders & Account</span>
+                    </div>
+                </div>
+                
+                <div class="user-action-item dropdown d-none d-sm-flex">
+                    <i class="fa-solid fa-headset fs-5"></i>
+                    <div class="dropdown-toggle" data-bs-toggle="dropdown" style="cursor:pointer">
+                        <strong>Support</strong>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="user-action-item">
+                    <i class="fa-solid fa-globe fs-5"></i>
+                    <strong class="d-none d-md-block">EN</strong>
+                </div>
+
+                <div class="position-relative">
+                    <i class="fa-solid fa-cart-shopping fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">
+                        0
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+<section class="safety-section">
+    <div class="container custom-wrap">
+
+        <!-- top header -->
+        <div class="safety-top">
+            <div class="left-shield">
+                <img src="public/safety/Group 130.png" alt="shield">
+            </div>
+
+            <div class="top-content">
+                <h2>Security &amp; Safety Guidelines</h2>
+                <p>Your safety is our priority. Shop with confidence on Emela.net</p>
+            </div>
+
+            <div class="right-shield">
+                <img src="public/safety/Group 133.png" alt="lock shield">
+            </div>
+        </div>
+
+        <!-- cards -->
+        <div class="row g-3 mt-2">
+
+            <div class="col-md-4">
+                <div class="safe-card blue-line">
+                    <div class="card-head">
+                        <div class="icon-circle light-blue">
+                            <img src="public/safety/icon-mail.png" alt="">
+                        </div>
+                        <span class="num blue">1</span>
+                        <h6>Official Communication</h6>
+                    </div>
+
+                    <ul>
+                        <li>Emela will never ask for extra money via SMS or email.</li>
+                        <li>We only contact you from our official domain: <strong>emela.net</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="safe-card red-line">
+                    <div class="card-head">
+                        <div class="icon-circle light-red">
+                            <img src="public/safety/icon-alert.png" alt="">
+                        </div>
+                        <span class="num red">2</span>
+                        <h6>Beware of Scams</h6>
+                    </div>
+
+                    <ul>
+                        <li>Do not click on fake links, unknown calls, or suspicious messages.</li>
+                        <li>Never share personal information with anyone. <strong>Ignore</strong> unauthorized requests.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="safe-card green-line">
+                    <div class="card-head">
+                        <div class="icon-circle light-green">
+                            <img src="public/safety/icon-key.png" alt="">
+                        </div>
+                        <span class="num green">3</span>
+                        <h6>Account Safety</h6>
+                    </div>
+
+                    <ul>
+                        <li>Use a strong and unique password.</li>
+                        <li>Never share your OTP or password with anyone.</li>
+                        <li>Avoid logging in on public Wi-Fi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="safe-card purple-line">
+                    <div class="card-head">
+                        <div class="icon-circle light-purple">
+                            <img src="public/safety/icon-card.png" alt="">
+                        </div>
+                        <span class="num purple">4</span>
+                        <h6>Payment Security</h6>
+                    </div>
+
+                    <ul>
+                        <li>We use secure payment gateways to protect your transactions.</li>
+                        <li>Never send money to personal accounts or via unofficial methods.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="safe-card orange-line">
+                    <div class="card-head">
+                        <div class="icon-circle light-orange">
+                            <img src="public/safety/icon-box.png" alt="">
+                        </div>
+                        <span class="num orange">5</span>
+                        <h6>Delivery Safety</h6>
+                    </div>
+
+                    <ul>
+                        <li>Check your product before accepting the delivery.</li>
+                        <li>Do not accept delivery from unknown or unauthorized persons.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="safe-card teal-line">
+                    <div class="card-head">
+                        <div class="icon-circle light-teal">
+                            <img src="public/safety/icon-headset.png" alt="">
+                        </div>
+                        <span class="num teal">6</span>
+                        <h6>Report Issues</h6>
+                    </div>
+
+                    <p class="report-text">
+                        If you face any issue or suspicious activity, contact our support team immediately.
+                    </p>
+
+                    <div class="contact-box">
+                        <div>✉ Email: support@emela.net</div>
+                        <div>☎ Hotline: +880 1234 567890</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- bottom box -->
+        <div class="bottom-safe-box">
+            <img src="public/safety/Group 130.png" alt="">
+            <div class="bottom-text">
+                <h5>Stay alert and ensure safe shopping on Emela.net</h5>
+                <p>Thank you for trusting us! 💚</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> 

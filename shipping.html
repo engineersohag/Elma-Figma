@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emela - Affiliate Program</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+        GLOBAL
+        ========================= */
+        body{
+            background: url('public/23.png') no-repeat center/cover fixed;
+            font-family: 'Gantari', sans-serif;
+        }
+
+        /* =========================
+        SECTIONS
+        ========================= */
+        .overview-section{
+            background: url('public/shipping/23.png') no-repeat center/cover;
+            padding:40px 0;
+        }
+
+        .policy-section{
+            padding:60px 0;
+        }
+
+        .footer-section{
+            background: url('public/shipping/23.png') no-repeat center/cover;
+            padding:30px 0;
+        }
+
+        /* =========================
+        CARD
+        ========================= */
+        .policy-card{
+            width:100%;
+            border-radius:15px;
+            padding:20px 25px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* overlay */
+        .policy-card::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(255,255,255,0.6);
+            border-radius:15px;
+        }
+
+        /* content layer */
+        .policy-card > *{
+            position:relative;
+            z-index:2;
+        }
+
+        /* =========================
+        HEADER
+        ========================= */
+        .policy-header{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:10px;
+            font-weight:600;
+        }
+
+        .policy-icon{
+            width:40px;
+        }
+
+        .policy-header h5{
+            margin:0;
+            color:#2c3e50;
+        }
+
+        /* =========================
+        LIST
+        ========================= */
+        .policy-card ul{
+            padding-left:18px;
+            margin:0;
+        }
+
+        .policy-card li{
+            font-size:14px;
+            color:#555;
+            margin-bottom:6px;
+        }
+
+        /* =========================
+        OVERVIEW
+        ========================= */
+        .overview{
+            margin-bottom:30px;
+        }
+
+        .overview h4{
+            margin-bottom:10px;
+        }
+
+        .overview p{
+            max-width:700px;
+        }
+
+        /* =========================
+        SOCIAL ICON
+        ========================= */
+        .social-icons{
+            text-align:center;
+            margin-top:40px;
+        }
+
+        .social-icons i{
+            margin:0 8px;
+            font-size:18px;
+            color:#2c7a7b;
+        }
+
+        /* =========================
+        BACKGROUND VARIANTS
+        ========================= */
+        .bg-1{
+            background-image: url('public/shipping/23.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bg-2{
+            background-image: url('public/shipping/23.png');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bg-3{
+            background-image: url('public/shipping/23.png');
+            background-position: center;
+            background-size: cover; 
+        }
+
+        .bg-4{
+            background-image: url('public/shipping/23.png');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body style="background-color: #faf5fb; font-family: 'Gantari', sans-serif;">
+
+    
+
+<nav class="navbar navbar-expand-xl navbar-light bg-white border-bottom fixed-top py-3">
+    <div class="container-fluid px-lg-5">
+        <a class="navbar-brand me-4" href="#">
+            <img src="public/logo.png" alt="Emela" style="height: 45px; width: auto;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav align-items-center gap-3">
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="#"><i class="fa-regular fa-thumbs-up me-1"></i> Best-Selling Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-medium" href="#">New In</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark fw-medium" href="#" data-bs-toggle="dropdown">Categories</a>
+                </li>
+            </ul>
+
+            <div class="mx-auto my-3 my-xl-0" style="max-width: 500px; width: 100%;">
+                <div class="input-group search-group">
+                    <input type="text" class="form-control border-end-0 rounded-pill-start ps-4" placeholder="Search on Emela..." style="height: 45px; background: #f8f9fa;">
+                    <button class="btn btn-teal rounded-pill-end px-3" type="button">
+                        <i class="fa-solid fa-magnifying-glass text-blue"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="navbar-nav align-items-center gap-3 gap-lg-4">
+                <div class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+                    <i class="fa-regular fa-user fs-5"></i>
+                    <div class="lh-sm d-none d-sm-block">
+                        <div class="fw-bold" style="font-size: 14px;">Sign in / Register</div>
+                        <div class="text-muted" style="font-size: 12px;">Orders & Account</div>
+                    </div>
+                </div>
+
+                <a href="#" class="nav-link d-flex align-items-center gap-1 text-dark">
+                    <i class="fa-solid fa-headset fs-5 text-teal"></i>
+                    <span>Support</span><i class="fa-solid fa-chevron-down ms-1" style="font-size: 10px;"></i>
+                </a>
+
+                <a href="#" class="nav-link d-flex align-items-center gap-1 text-dark">
+                    <i class="fa-solid fa-globe fs-5"></i>
+                    <span>English</span><i class="fa-solid fa-chevron-down ms-1" style="font-size: 10px;"></i>
+                </a>
+
+                <a href="#" class="nav-link text-dark position-relative">
+                    <i class="fa-solid fa-cart-shopping fs-5"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <header class="hero-section mt-5 pt-5">
+        <div class="container-fluid px-0">
+            <div class="p-5 text-start banner-bg" style="background-image: url('./public/22.png'); background-size: cover; background-position: center;">
+                <div class="container py-5 mt-4">
+                    <h1 class="display-4 fw-bold text-dark mb-3">Shipment Information Policy</h1>
+                    <h4 class="fw-light mb-4">Emela E-commerce Company Limited</h4>
+                    <p class="lead fs-4 fw-light mt-3" style="max-width: 600px;">
+                        This Shipping Information Policy explains how orders are processed, shipped, and delivered when customers purchase products through the Emela platform. It applies to customers, sellers, and logistics partners working with Emela Company.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 🔥 OVERVIEW আলাদা -->
+        <section class="overview-section">
+            <div class="container">
+
+                <div class="overview">
+                    <h4>Overview</h4>
+                    <p>
+                        This Shipping Information Policy explains how orders are processed, shipped, and delivered when customers purchase products through the Emela platform. It applies to customers, sellers, and logistics partners working with Emela Company Limited.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 🔥 CARDS আলাদা -->
+        <section class="policy-section">
+            <div class="container">
+
+                <div class="row g-4">
+                    <!-- left side -->
+                    <div class="col-lg-6">
+                        <div class="policy-card bg-1">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (1).png" class="policy-icon">
+                                <h5>Shipping Coverage</h5>
+                            </div>
+
+                            <ul>
+                                <li>Emela Company Limited currently provides shipping services within the designated service locations listed on the platform</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (3).png" class="policy-icon">
+                                <h5 >Order Processing Time</h5>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li class="mb-3">Orders are typically processed within 1-3 business days after payment confirmation.</li>
+                                <li class="mb-3">Orders are typically processed within 1-3 business days after payment confirmation.</li>
+                                <li class="mb-3">Orders are typically processed within 1-3 business days after payment confirmation.</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (4).png" class="policy-icon">
+                                <h5 >Shipping Charges</h5>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li class="mb-3">Shipping fees are displayed at checkout before payment.</li>
+                                <li class="mb-3">Charges may vary based on weight, size, delivery location, and shipping method.</li>
+                                <li class="mb-3">Free shipping offers, if available, will be clearly shown.</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (6).png" class="policy-icon">
+                                <h5 >Courier Partners</h5>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li class="mb-3">Emela works with third-party courier and logistics partners to ensure reliable delivery. Deliveries are subject to the courier's operational terms and conditions.</li>
+                            </ul>
+
+                        </div>
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (8).png" class="policy-icon">
+                                <h5 >Order Tracking</h5>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li class="mb-3">Emela works with third-party courier and logistics partners to ensure reliable delivery. Deliveries are subject to the courier's operational terms and conditions.</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- right side -->
+                    <div class="col-lg-6">
+                        <div class="policy-card bg-2">
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon.png" class="policy-icon">
+                                <h5>Shipping Methods</h5>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li class="mb-3">Shipping availability may vary depending on:</li>
+                                <li class="mb-3">Shipping availability may vary depending on:</li>
+                                <li class="mb-3">Shipping availability may vary depending on:</li>
+                                <li class="mb-3">Shipping availability may vary depending on:</li>
+                                <li class="mb-3">Shipping availability may vary depending on:</li>
+
+                            </ul>
+                        </div>
+
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (2).png" class="policy-icon">
+                                <h5>Shipping Coverage</h5>
+                            </div>
+
+                            <ul>
+                                <li>Emela Company Limited currently provides shipping services within the designated service locations listed on the platform</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (5).png" class="policy-icon">
+                                <h5>Shipping Charges</h5>
+                            </div>
+
+                            <ul class="mt-5">
+                                <li class="mt-4">Shipping fees are displayed at checkout before payment</li>
+                                <li class="mt-4">Charges may vary based on weight, size, delivery location, and shipping method.</li>
+                                <li class="mt-4">Free shipping offers, if available, will be clearly shown.</li>
+                            </ul>
+
+                        </div>
+
+                        <div class="policy-card bg-1 mt-4">
+
+                            <div class="policy-header">
+                                <img src="public/Shipping/icon (7).png" class="policy-icon">
+                                <h5>Damaged or Missing Items</h5>
+                            </div>
+
+                            <ul class="mt-4">
+                                <li class="mt-4">Shipping fees are displayed at checkout before payment</li>
+                                <li class="mt-4">Charges may vary based on weight, size, delivery location, and shipping method.</li>
+                                <li class="mt-4">Free shipping offers, if available, will be clearly shown.</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 🔥 FOOTER আলাদা -->
+        <section class="footer-section">
+            <div class="container text-end social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </section>
+
+    </main>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> 

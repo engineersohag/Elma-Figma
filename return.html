@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Return & Refund Policy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom CSS to maintain background and specific designs */
+        body { font-family: 'Gantari', sans-serif; background-color: #e7e3f0; }
+        :root {
+            --primary-teal: #127a87;
+        }
+
+        /* Top Bar Styling */
+        .top-bar {
+            background-color: var(--primary-teal);
+            color: white;
+            font-size: 13px;
+            padding: 8px 0;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-bar-divider {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            height: 25px;
+            margin: 0 15px;
+        }
+
+        /* Main Header Styling */
+        .main-header {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-placeholder img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-link-custom {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 15px;
+        }
+
+        .search-container {
+            position: relative;
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 15px;
+        }
+
+        .search-input {
+            border-radius: 25px;
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            width: 100%;
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-teal);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-action-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .sub-text {
+            font-size: 11px;
+            color: #777;
+            display: block;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .search-container {
+                order: 3;
+                max-width: 100%;
+                margin: 15px 0 0 0;
+                width: 100%;
+            }
+            .main-header .container-fluid {
+                flex-wrap: wrap;
+            }
+            .user-action-item strong, .user-action-item .sub-text {
+                display: none; /* মোবাইলে শুধু আইকন দেখাবে */
+            }
+            .gap-4 {
+                gap: 1.5rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-placeholder img {
+                height: 30px;
+            }
+        }
+
+        .policy-banner {
+            background-image: url('./public/Policy-Wrapper@3x.png');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: #10223d;
+        }
+
+        .custom-card {
+            border-radius: 12px;
+            background-color: #e1deea;
+            box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+            border: none;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            z-index: 1;
+        }
+
+        /* কার্ডের ব্যাকগ্রাউন্ড ইমেজ ক্লাস */
+        .card-bg-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .policy-title { color: #10223c; font-weight: 500; margin-bottom: 20px; }
+        
+        .footer-bg {
+            background-image: url('./public/Footer-Wrapper@3x.png');
+            background-size: cover;
+            padding: 60px 0;
+        }
+
+        .list-unstyled li { margin-bottom: 10px; font-weight: 300; }
+        
+        /* রিপ্লেসমেন্ট এবং অন্যান্য সেকশনের বিশেষ ব্যাকগ্রাউন্ড */
+        .replacement-bg { background-image: url('./public/Replacement-Wrapper@3x.png'); background-size: cover; }
+    </style>
+</head>
+<body>
+  <header class="main-header">
+        <div class="container-fluid px-3 px-md-4 d-flex align-items-center justify-content-between">
+
+            <div class="logo-placeholder">
+                <img src="public/logo.png" class="me-5" alt="Logo">
+            </div>
+
+            <nav class="d-none d-xl-flex align-items-center">
+                <a href="#" class="nav-link-custom"><i class="fa-regular fa-thumbs-up me-1"></i> Best-Selling Items</a>
+                <a href="#" class="nav-link-custom">New In</a>
+                <div class="dropdown">
+                    <a class="nav-link-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Fashion</a></li>
+                        <li><a class="dropdown-item" href="#">Electronics</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search on Emela...">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 gap-md-4">
+                <div class="user-action-item">
+                    <i class="fa-regular fa-user fs-5"></i>
+                    <div>
+                        <strong>Sign in / Register</strong>
+                        <span class="sub-text">Orders & Account</span>
+                    </div>
+                </div>
+                
+                <div class="user-action-item dropdown d-none d-sm-flex">
+                    <i class="fa-solid fa-headset fs-5"></i>
+                    <div class="dropdown-toggle" data-bs-toggle="dropdown" style="cursor:pointer">
+                        <strong>Support</strong>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="user-action-item">
+                    <i class="fa-solid fa-globe fs-5"></i>
+                    <strong class="d-none d-md-block">EN</strong>
+                </div>
+
+                <div class="position-relative">
+                    <i class="fa-solid fa-cart-shopping fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;">
+                        0
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <header class="policy-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold mb-3">Return, Refund & <br>Replacement Policy</h1>
+                    <h4 class="fw-normal mb-3">Emela E-commerce Company Limited</h4>
+                    <p class="lead fw-light">
+                        This policy follows the Bangladesh consumer law and global e-commerce standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            
+            <div class="col-6">
+                <div class="custom-card">
+                    <!-- <img src="./public/Asset1@2x.png" class="card-bg-img" alt=""> -->
+                    <h2 class="policy-title h4"> <img src="public/icon-1.jpeg" style="border-radius: 50%;width: 50px;height: 50px; margin-right: 10px;" alt=""></i>Return Eligibility</h2>
+                    <p class="small fw-light">Customers may request a return within 7 days of:</p>
+                    <ul class="ps-3 fw-light">
+                        <li>The product is defective or damaged.</li>
+                        <li>The wrong product was delivered.</li>
+                        <li>The product significantly differs from its description.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="custom-card">
+                    <!-- <img src="./public/Asset6@2x.png" class="card-bg-img" alt=""> -->
+                    <h2 class="policy-title h4"><img src="public/icon-2.jpeg" style="border-radius: 50%;width: 50px;height: 50px; margin-right: 10px;" alt="">Non-Returnable Items</h2>
+                    <p class="small fw-light">Items excluded unless defective:</p>
+                    <ul class="ps-3 fw-light">
+                        <li>Perishable goods (food, groceries, eggs).</li>
+                        <li>Personal hygiene items once opened.</li>
+                        <li>Digital products after access.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="custom-card">
+                    <!-- <img src="./public/Asset4@2x.png" class="card-bg-img" alt=""> -->
+                    <h2 class="policy-title h4"><img src="public/icon-3.jpeg" style="border-radius: 50%;width: 50px;height: 50px; margin-right: 10px;" alt="">Return Conditions</h2>
+                    <ul class="ps-3 fw-light mt-4">
+                        <li>Items must be unused & in original packaging.</li>
+                        <li>Proof of purchase is required.</li>
+                        <li>Emela reserves the right to inspect items.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="custom-card">
+                    <!-- <img src="./public/Asset3@2x.png" class="card-bg-img" alt=""> -->
+                    <h2 class="policy-title h4"><img src="public/icon-4.jpeg" style="border-radius: 50%;width: 50px;height: 50px; margin-right: 10px;" alt="">Refund Policy <small class="fs-6 fw-light">(BD Compliant)</small></h2>
+                    <ul class="ps-3 fw-light">
+                        <li>Approved refunds are processed within 7-10 working days.</li>
+                        <li>Refunds are issued through original payment method.</li>
+                        <li>Full refund if Emela fails to deliver within timeline.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="custom-card replacement-bg">
+                    <h2 class="policy-title h4"><img src="public/icon-5.jpeg" style="border-radius: 50%;width: 50px;height: 50px; margin-right: 10px;" alt="">Replacement Policy</h2>
+                    <ul class="ps-3 fw-light mt-3">
+                        <li>Customers may choose a replacement instead of a refund.</li>
+                        <li>Subject to product availability.</li>
+                        <li>If unavailable, a full refund will be issued.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                        <div class="custom-card" style="background:url(public/last-card-bg.jpeg)">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./public/icon@2x.png" width="50" class="me-3" alt="">
+                                <h2 class="policy-title h4 mb-0">Customer Support</h2>
+                            </div>
+                            <p class="small">Submit requests with:</p>
+                            <ul class="ps-3 fw-light">
+                                <li>Order ID & Description of issue.</li>
+                                <li>Product photos or videos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="custom-card">
+                            <!-- <img src="./public/Asset@2x.png" class="card-bg-img" alt=""> -->
+                            <h2 class="policy-title h4"><img src="public/icon-6.jpeg" style="border-radius: 50%;width: 50px;height: 50px; margin-right: 10px;" alt="">Fraud Prevention</h2>
+                            <p class="small">Refunds may be denied in cases of:</p>
+                            <ul class="ps-3 fw-light">
+                                <li>False claims or repeated abuse.</li>
+                                <li>Item misuse or damage after delivery.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <footer class="footer-bg">
+        <div class="container text-end">
+            <div class="d-inline-flex gap-3">
+                <img src="./public/logos-facebook@2x.png" width="30" class="img-fluid" alt="">
+                <img src="./public/mdi-twitter@2x.png" width="30" class="img-fluid" alt="">
+                <img src="./public/mdi-linkedin@2x.png" width="30" class="img-fluid" alt="">
+                <img src="./public/mdi-instagram@2x.png" width="30" class="img-fluid" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

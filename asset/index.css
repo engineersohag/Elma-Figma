@@ -1,0 +1,102 @@
+/* কাস্টম কালার ও ফন্ট সেটিংস */
+:root {
+  --primary-color: #7b2d8b;
+  --dark-blue: #10223d;
+}
+
+body {
+  overflow-x: hidden;
+}
+/* রঙ এবং কাস্টম স্টাইল */
+.text-teal {
+    color: #008080 !important; /* ছবির নীলচে-সবুজ রঙ */
+}
+
+.btn-teal {
+    background-color: #008080;
+    border: none;
+    color: white;
+}
+
+.btn-teal:hover {
+    background-color: #006666;
+}
+
+/* সার্চ বার রাউন্ডেড করা */
+.rounded-pill-start {
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+}
+
+.rounded-pill-end {
+    border-top-right-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+}
+
+.search-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-group input:focus {
+    box-shadow: none;
+    border-color: #e0e0e0;
+}
+
+/* নেভলিংক স্টাইল */
+.nav-link {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.navbar-brand img {
+    object-fit: contain;
+}
+
+
+/* Navbar Active Link */
+.active-link {
+  color: var(--primary-color) !important;
+  font-weight: 500;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Banner Background */
+.banner-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px;
+}
+
+/* Custom Card Styling */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* মোবাইল রেসপন্সিভ ফিক্স */
+@media (max-width: 1199px) {
+    .navbar-collapse {
+        padding: 20px 0;
+    }
+}
+@media (max-width: 768px) {
+  .banner-bg {
+    text-align: center !important;
+  }
+}
